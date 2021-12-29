@@ -1,0 +1,12 @@
+--- # my loops playbook
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+         - name: add a list users in a nodes
+           user: name='{{item}}' state=present
+           with_items:
+                  - ankit
+                  - nikhil
+                  - sumit
